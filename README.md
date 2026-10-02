@@ -66,6 +66,3 @@ Connect `pixel_valid_o`, `pixel_address_o`, and `pixel_rgb_o` to a framebuffer w
 
 The RTL does not allocate a framebuffer, perform DDR transfers, or drive HDMI. Those functions belong in surrounding system logic. Compile `jpeg_header_types_pkg.sv` before modules that reference its typedefs. A typical source order is the package, fixed tables, parser/header and datapath modules, then `jpeg_top.sv`.
 
-## Current status
-
-This is an RTL starting point, not a validated general-purpose JPEG decoder. No testbench or automated regression is included in this source set. Before relying on it, simulate it with known baseline 8-bit 4:4:4 JPEG vectors whose DQT/DHT data matches the fixed tables, check coefficient and pixel outputs against a reference decoder, and run the target FPGA/ASIC toolchain's SystemVerilog synthesis and timing checks.
